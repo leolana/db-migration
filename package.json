@@ -1,7 +1,7 @@
 {
-  "name": "wapp11-db-migration",
+  "name": "db-migration",
   "version": "1.0.0",
-  "description": "Wapp11 migration to unified database",
+  "description": "Migrate to unified database",
   "main": "src/index.js",
   "scripts": {
     "dev": "nodemon --exec babel-node src/index.js | pino-pretty -c -l",
@@ -10,20 +10,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chatclass/nubot-functions.git"
+    "url": "git+https://github.com/chatclass/db-migration.git"
   },
   "keywords": [
-    "wapp11;migrations;scripts;database"
+    "db;migrations;scripts"
   ],
   "author": "chatclass",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/chatclass/wapp11-migration/issues"
+    "url": "https://github.com/chatclass/db-migration/issues"
   },
   "engines": {
     "node": "14.x"
   },
-  "homepage": "https://github.com/chatclass/wapp11-migration#readme",
+  "homepage": "https://github.com/chatclass/db-migration#readme",
   "dependencies": {
     "@babel/cli": "^7.17.6",
     "@babel/core": "^7.17.5",
