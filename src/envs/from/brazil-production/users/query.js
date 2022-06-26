@@ -1,4 +1,4 @@
-const query = async (source) => {
+const query = (source) => async () => {
   const result = await source.query(`
         with 
 
