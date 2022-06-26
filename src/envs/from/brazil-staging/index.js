@@ -5,7 +5,7 @@ import { query as groupQuery } from "./groups";
 import { query as statQuery } from "./stat";
 import { query as userQuery } from "./users";
 
-export {
+const brazilStaging = {
   activityQuery,
   classroomQuery,
   courseQuery,
@@ -13,3 +13,5 @@ export {
   statQuery,
   userQuery,
 };
+
+export { brazilStaging };
