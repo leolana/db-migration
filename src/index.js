@@ -1,7 +1,10 @@
-import dotenv from 'dotenv';
+import { brazilProduction } from "./envs/from";
 
-import { brazilProduction, brazilStaging, egratitudeProduction } from './envs/from';
-
-
-
-dotenv.config();
+void (async function () {
+  try {
+    const activityQueryResult = await brazilProduction.activityQuery();
+    console.log(activityQueryResult);
+  } catch (error) {
+    console.log(error);
+  }
+})();

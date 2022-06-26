@@ -1,4 +1,4 @@
-const query = (source) => async () => {
+const query = async (source) => {
   const result = await source.query(`
     with 
 
@@ -72,7 +72,7 @@ const query = (source) => async () => {
     from course_content_with_block_activities_new 
     where course_id in (select distinct course_id from count_junc where activities_done <> total_activities)
   `);
-  return result;
+  return result.rows;
 };
 
 export { query };

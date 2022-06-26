@@ -1,4 +1,4 @@
-const query = (source) => async () => {
+const query = async (source) => {
   const result = await source.query(`
     with 
 
@@ -39,7 +39,7 @@ const query = (source) => async () => {
     select * from activity
     where id in (select distinct activity_id from users)
   `);
-  return result;
+  return result.rows;
 };
 
 export { query };

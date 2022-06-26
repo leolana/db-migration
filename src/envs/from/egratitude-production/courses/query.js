@@ -1,4 +1,4 @@
-const query = (source) => async () => {
+const query = async (source) => {
   const result = await source.query(`
     with 
 
@@ -40,7 +40,7 @@ const query = (source) => async () => {
     select * from course
     where id in (select distinct course_id from users)
     `);
-  return result;
+  return result.rows;
 };
 
 export { query };

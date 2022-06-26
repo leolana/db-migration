@@ -1,4 +1,4 @@
-const query = (source) => async () => {
+const query = async (source) => {
   const result = await source.query(`
     with 
 
@@ -38,7 +38,7 @@ const query = (source) => async () => {
     select * from group_data
     where id in (select distinct id from users)
     `);
-  return result;
+  return result.rows;
 };
 
 export { query };
