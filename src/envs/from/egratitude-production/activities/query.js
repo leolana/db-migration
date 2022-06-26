@@ -38,7 +38,7 @@ const query = async (source) => {
     
     select * from activity
     where id in (select distinct activity_id from users)
-    `);
+  `);
   return result;
 };
 

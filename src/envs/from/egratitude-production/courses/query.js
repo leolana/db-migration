@@ -26,6 +26,7 @@ const query = async (source) => {
                     u.whatsapp_id,
                     s.classroom_id,
                     s.activity_id,
+                    s.course_id,
                     g.*
         
         from        user_data  as u 
@@ -36,8 +37,8 @@ const query = async (source) => {
         and         user_id not in (select * from ids_to_ignore)
     )
     
-    select * from activity
-    where id in (select distinct activity_id from users)
+    select * from course
+    where id in (select distinct course_id from users)
     `);
   return result;
 };
