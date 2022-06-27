@@ -1,4 +1,4 @@
-import { brazilProduction } from "./envs/from";
+import { brazilProduction } from "./from";
 
 void (async function () {
   try {

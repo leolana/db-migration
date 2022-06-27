@@ -10,4 +10,26 @@ const connect = async (config) => {
   return client;
 };
 
-export { connect };
+const getInsertVarsByObject = (obj) => {
+  Object.keys(obj).forEach((key) => obj[key] === undefined && delete obj[key]);
+
+  const columns = Object.keys(obj);
+  const values = Object.values(obj).filter((v) => v !== undefined);
+  const vars = [...Array(values.length + 1).keys()].slice(1);
+
+  return {
+    columns: columns.join(","),
+    vars: "$" + vars.join(",$"),
+    values: values,
+  };
+};
+
+const getInsertSqlByObject = (table, obj) => {
+  const insert = getInsertVarsByObject(obj);
+  return {
+    values: insert.values,
+    text: `INSERT INTO "${table}" (${insert.columns}) VALUES (${insert.vars})`,
+  };
+};
+
+export { connect, getInsertSqlByObject };
