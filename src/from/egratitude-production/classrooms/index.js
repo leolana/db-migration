@@ -1,11 +1,16 @@
 import { config } from "../../../infra/config";
 import { connect } from "../../../infra/database";
 
-import { query } from "./query";
+import { query, queryOne } from "./query";
 
 const queryToMigrate = async () => {
   const connection = await connect(config.wapp11ProductionDb);
   return query(connection);
 }
 
-export { queryToMigrate };
+const queryOneToMigrate = async () => {
+  const connection = await connect(config.wapp11ProductionDb);
+  return queryOne(connection);
+}
+
+export { queryToMigrate, queryOneToMigrate };
