@@ -41,4 +41,16 @@ const query = async (source) => {
   return result.rows;
 };
 
-export { query };
+const queryOne = async (source, id) => {
+  const result = await source.query(
+    `
+                  select *
+                  from stat
+                  where id = $1
+                `,
+    [id]
+  );
+  return result.rows[0];
+};
+
+export { query, queryOne };
