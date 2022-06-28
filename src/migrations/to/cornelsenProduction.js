@@ -1,4 +1,4 @@
-import { config } from "../infra/config";
+import { config } from "../../infra/config";
 
 import { inserMigrate as activityInsert } from "./activities";
 import { inserMigrate as classroomInsert } from "./classrooms";

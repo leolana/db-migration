@@ -1,4 +1,4 @@
- import { getInsertSqlByObject } from "../../infra/database";
+ import { getInsertSqlByObject } from "../../../infra/database";
 
 const insert = async (source, data) => {
   const { text, values } = getInsertSqlByObject("activity", data);

@@ -1,7 +1,7 @@
-import { logger } from "./infra/logger";
+import { logger } from "../infra/logger";
 
 import { brazilProduction } from "./from";
-import { cornelsenProduction } from "./to";
+import { cornelsenProduction } from "./to/cornelsenProduction";
 
 const migrationOrder = [
   "courses",
@@ -13,22 +13,26 @@ const migrationOrder = [
 ];
 
 const migrateCourse = async () => {
+  console.log(brazilProduction);
   const courseQueryResult = await brazilProduction.courseQuery();
   logger.info(`Total of courses to migrate: ${courseQueryResult.length}`);
   courseQueryResult.forEach((item) => {
-    logger.info('Course to migrate:', JSON.stringify(item));
-    // const course = await brazilProduction.courseQueryOne(item.course_id);
+    logger.info('----------------------------------------------------');
+    logger.info(`Course to migrate: ${item.id}`);
+    // logger.info(JSON.stringify(item));
+    const course = await brazilProduction.courseQueryOne(item.id);
     // const courseMigrated = await cornelsenProduction.courseInsert(course);
-    // logger.info('Migrated course:', JSON.stringify(course));
+    logger.info(`Migrated coruse: ${course.id}`);
+    logger.info('----------------------------------------------------');
   });
 };
 
-const migrateActivity = async () => {
-  const activityQueryResult = await brazilProduction.activityQuery();
-  activityQueryResult.forEach((item) => {
-    const activity = await brazilProduction.activityQueryOne(item.activity_id);
-    const activityMigrated = await cornelsenProduction.activityInsert(activity);
-  });
-};
+// const migrateActivity = async () => {
+//   const activityQueryResult = await brazilProduction.activityQuery();
+//   activityQueryResult.forEach((item) => {
+//     const activity = await brazilProduction.activityQueryOne(item.activity_id);
+//     const activityMigrated = await cornelsenProduction.activityInsert(activity);
+//   });
+// };
 
-export { migrationOrder, migrateCourse, migrateActivity };
+export { migrationOrder, migrateCourse };

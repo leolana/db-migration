@@ -7,6 +7,7 @@ void (async function () {
     await migrateCourse();
     logger.info("Migration finished");
   } catch (error) {
+    console.log(error);
     logger.error(error);
   }
 })();

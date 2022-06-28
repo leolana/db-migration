@@ -9,6 +9,7 @@ const queryToMigrate = async () => {
 }
 
 const queryOneToMigrate = async () => {
+  console.log(config.wapp11ProductionDb);
   const connection = await connect(config.wapp11ProductionDb);
   return queryOne(connection);
 }

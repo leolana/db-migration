@@ -1,6 +1,6 @@
-import winston, { createlogger } from "winston";
+import * as winston from "winston";
 
-const logger = createlogger({
+const logger = winston.createLogger({
   level: "info",
   format: winston.format.json(),
   transports: [
