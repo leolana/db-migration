@@ -1,10 +1,12 @@
-import { brazilProduction } from "./migrations/from";
+import { migrateCourse } from "./migrations/migrate";
+import { logger } from "./infra/logger";
 
 void (async function () {
   try {
-    const activityQueryResult = await brazilProduction.activityQuery();
-    console.log(activityQueryResult);
+    logger.info("Start migration");
+    await migrateCourse();
+    logger.info("Migration finished");
   } catch (error) {
-    console.log(error);
+    logger.error(error);
   }
 })();
