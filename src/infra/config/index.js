@@ -12,6 +12,12 @@ const config = {
   wapp11EgratitudeProductionDb: {
     connectionString: process.env.WAPP11_EGRATITUDE_PRODUCTION_DB_CONNECTION_STRING,
   },
+  wapp11CornelsenProductionDb: {
+    connectionString: process.env.WAPP11_CORNELSEN_PRODUCTION_DB_CONNECTION_STRING,
+  },
+  wapp11CornelsenStagingDb: {
+    connectionString: process.env.WAPP11_CORNELSEN_STAGING_DB_CONNECTION_STRING,
+  },
 };
 
 export { config };

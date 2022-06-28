@@ -28,7 +28,7 @@ const getInsertSqlByObject = (table, obj) => {
   const insert = getInsertVarsByObject(obj);
   return {
     values: insert.values,
-    text: `INSERT INTO "${table}" (${insert.columns}) VALUES (${insert.vars})`,
+    text: `INSERT INTO "${table}" (${insert.columns}) VALUES (${insert.vars}) RETURNING *`,
   };
 };
 
