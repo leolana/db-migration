@@ -1,4 +1,4 @@
-import { brazilProduction } from "./from";
+import { brazilProduction } from "./migrations/from";
 
 void (async function () {
   try {
