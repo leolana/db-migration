@@ -8,9 +8,9 @@ const queryToMigrate = async () => {
   return query(connection);
 }
 
-const queryOneToMigrate = async () => {
+const queryOneToMigrate = async (id) => {
   const connection = await connect(config.wapp11ProductionDb);
-  return queryOne(connection);
+  return queryOne(connection, id);
 }
 
 export { queryToMigrate, queryOneToMigrate };
