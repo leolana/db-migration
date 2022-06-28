@@ -13,16 +13,16 @@ const migrationOrder = [
 ];
 
 const migrateCourse = async () => {
-  console.log(brazilProduction);
   const courseQueryResult = await brazilProduction.courseQuery();
   logger.info(`Total of courses to migrate: ${courseQueryResult.length}`);
-  courseQueryResult.forEach((item) => {
+  courseQueryResult.forEach(async (item, index) => {
     logger.info('----------------------------------------------------');
     logger.info(`Course to migrate: ${item.id}`);
     // logger.info(JSON.stringify(item));
     const course = await brazilProduction.courseQueryOne(item.id);
     // const courseMigrated = await cornelsenProduction.courseInsert(course);
-    logger.info(`Migrated coruse: ${course.id}`);
+    logger.info(`Migrated course: ${course.id}`);
+    logger.info(`Migrated course index: ${index}`);
     logger.info('----------------------------------------------------');
   });
 };

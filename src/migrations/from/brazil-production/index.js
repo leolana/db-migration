@@ -1,6 +1,6 @@
 import {
-  queryToMigrate as activityQueryMigrate,
-  queryOneToMigrate as activityQueryOneMigrate,
+  queryToMigrate as activityQuery,
+  queryOneToMigrate as activityQueryOne,
 } from "./activities";
 import {
   queryToMigrate as classroomQuery,
@@ -24,18 +24,18 @@ import {
 } from "./users";
 
 const brazilProduction = {
-  activityQuery: activityQueryMigrate,
-  activityQueryOne: activityQueryOneMigrate,
-  classroomQuery: classroomQuery,
-  classroomQueryOne: classroomQueryOne,
-  courseQuery: courseQuery,
-  courseQueryOne: courseQueryOne,
-  groupQuery: groupQuery,
-  groupQueryOne: groupQueryOne,
-  statQuery: statQuery,
-  statQueryOne: statQueryOne,
-  userQuery: userQuery,
-  userQueryOne: userQueryOne,
+  activityQuery,
+  activityQueryOne,
+  classroomQuery,
+  classroomQueryOne,
+  courseQuery,
+  courseQueryOne,
+  groupQuery,
+  groupQueryOne,
+  statQuery,
+  statQueryOne,
+  userQuery,
+  userQueryOne,
 };
 
 export { brazilProduction };
