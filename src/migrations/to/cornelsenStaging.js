@@ -8,12 +8,12 @@ import { inserMigrate as statInsert } from "./stat";
 import { inserMigrate as userInsert } from "./users";
 
 const cornelsenStaging = {
-  activityInsert: () => activityInsert(config.wapp11CornelsenStagingDb),
-  classroomInsert: () => classroomInsert(config.wapp11CornelsenStagingDb),
-  courseInsert: () => courseInsert(config.wapp11CornelsenStagingDb),
-  groupInsert: () => groupInsert(config.wapp11CornelsenStagingDb),
-  statInsert: () => statInsert(config.wapp11CornelsenStagingDb),
-  userInsert: () => userInsert(config.wapp11CornelsenStagingDb),
+  activityInsert: () => activityInsert(config.dbHeroCornelsenStagingDb),
+  classroomInsert: () => classroomInsert(config.dbHeroCornelsenStagingDb),
+  courseInsert: () => courseInsert(config.dbHeroCornelsenStagingDb),
+  groupInsert: () => groupInsert(config.dbHeroCornelsenStagingDb),
+  statInsert: () => statInsert(config.dbHeroCornelsenStagingDb),
+  userInsert: () => userInsert(config.dbHeroCornelsenStagingDb),
 };
 
 export { cornelsenStaging };
